@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Dear GF</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Welcome MY Dear GF 💕</h1>
+        <p>I have a question, will you be my valentine?</p>
+    
+        <div class="buttons">
+            <button class="yes" onclick="yesClicked()">Yes 💖</button>
+            <button class="no" id="noBtn">No 💔</button>
+        </div>
+    </div>
+    
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const buttons = document.querySelector(".buttons");
+    
+        noBtn.addEventListener("mouseenter", () => {
+            const yesBtn = document.querySelector(".yes");
+    
+            // Swap positions
+            if (buttons.firstElementChild === yesBtn) {
+                buttons.insertBefore(noBtn, yesBtn);
+            } else {
+                buttons.insertBefore(yesBtn, noBtn);
+            }
+        });
+    
+        function yesClicked() {
+            document.body.innerHTML = `
+                <div style="
+                    height:100vh;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    background:linear-gradient(135deg,#ff4d6d,#ff9a9e);
+                    font-family:Segoe UI;
+                ">
+                    <h1 style="color:white;font-size:50px;">
+                        YAYYY!!! 💘🥰 I knew you'd say YES!
+                    </h1>
+                </div>
+            `;
+        }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
